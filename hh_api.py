@@ -29,7 +29,7 @@ def get_vacancies_for_company(employer_id: str = None, pages: int = 1) -> List[D
                 break
             all_vacancies.extend(data.get('items', []))
             if len(data.get('items', [])) < 100:
-                break  # Останавливаемся, если на текущей странице меньше 100 вакансий
+                break
         else:
             print(f"Ошибка при запросе: {response.status_code} - {response.text}")
             break

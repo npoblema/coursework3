@@ -68,7 +68,6 @@ class DBManager:
         return self.cursor.fetchall()
 
     def get_avg_salary(self) -> Optional[float]:
-        """Получение средней зарплаты по вакансиям"""
         self.cursor.execute("""
         SELECT AVG(salary_min + salary_max) / 2
         FROM vacancies
