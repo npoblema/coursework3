@@ -72,7 +72,7 @@ class DBManager:
         self.cursor.execute("""
         SELECT AVG(salary_min + salary_max) / 2
         FROM vacancies
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL; 
+        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL;  
         """)
         result = self.cursor.fetchone()
         return result[0] if result else None
