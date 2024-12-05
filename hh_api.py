@@ -12,11 +12,11 @@ def get_vacancies_for_company(employer_id: str = None, pages: int = 1) -> List[D
     :return: Список вакансий.
     """
     all_vacancies = []
-    params = {'per_page': 100}  # Без ID компании, все вакансии из всех компаний
+    params = {'per_page': 100}
     url = f"{BASE_URL}vacancies"
 
     if employer_id:
-        params['employer_id'] = employer_id  # Только вакансии этой компании
+        params['employer_id'] = employer_id
 
     for page_number in range(pages):
         params['page'] = page_number

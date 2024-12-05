@@ -58,7 +58,7 @@ class DBManager:
         return self.cursor.fetchall()
 
     def get_companies_and_vacancies_count(self):
-        """Получение количества вакансий для каждой компании"""
+        """Получение количества вакансий для каждой компани"""
         self.cursor.execute("""
         SELECT companies.name, COUNT(vacancies)
         FROM companies
