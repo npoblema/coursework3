@@ -58,7 +58,7 @@ class DBManager:
         return self.cursor.fetchall()
 
     def get_companies_and_vacancies_count(self):
-        """Получение количества вакансий для каждой компании"""
+        """Получение количества вакансий для каждой компани"""
         self.cursor.execute("""
         SELECT companies.name, COUNT(vacancies)
         FROM companies
@@ -68,11 +68,10 @@ class DBManager:
         return self.cursor.fetchall()
 
     def get_avg_salary(self) -> Optional[float]:
-        """Получение средней зарплаты по вакансиям"""
         self.cursor.execute("""
         SELECT AVG(salary_min + salary_max) / 2
         FROM vacancies
-        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL;
+        WHERE salary_min IS NOT NULL AND salary_max IS NOT NULL;  
         """)
         result = self.cursor.fetchone()
         return result[0] if result else None

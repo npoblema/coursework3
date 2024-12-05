@@ -31,11 +31,9 @@ for vacancy in vacancies:
     # Вставка данных о компании в базу данных
     company_id = db_manager.insert_company(company_name)
 
-    # Вставка вакансий
     vacancy_records = [(vacancy_title, salary_min, salary_max, vacancy_url, company_id)]
     db_manager.insert_vacancies_bulk(vacancy_records)
 
-# Интерфейс для взаимодействия с пользователем
 while True:
     print("\nВыберите действие:")
     print("1: Все вакансии")
